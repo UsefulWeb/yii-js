@@ -1,10 +1,3 @@
-/**
- * Yii 1.1 javascript port for Backbone.
- *
- * @author Vladimir Yazykov <neizerth@gmail.com>
- */
-
-
 window.Yii = {
 	app: {
 

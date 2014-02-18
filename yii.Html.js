@@ -331,7 +331,7 @@ Yii.Html.dropDownList = function(name,select,data,htmlOptions) {
 	if(!PHP.isset(htmlOptions['id']))
 		htmlOptions['id']=this.getIdByName(name);
 	else if(htmlOptions['id']===false)
-		PHP.unset(htmlOptions['id']);
+		htmlOptions['id'] = null;
 
 	this.clientChange('change',htmlOptions);
 
@@ -348,7 +348,7 @@ Yii.Html.dropDownList = function(name,select,data,htmlOptions) {
 			var hiddenOptions=PHP.isset(htmlOptions['id']) ? {'id' : this.ID_PREFIX+htmlOptions['id']} : {'id' : false};
 			
 			hidden=this.hiddenField(htmlOptions['name'].substr(0,-2),htmlOptions['unselectValue'],hiddenOptions);
-			PHP.unset(htmlOptions['unselectValue']);
+			htmlOptions['unselectValue'] = null;
 		}
 	}
 	// add a hidden field so that if the option is not selected, it still submits a value
@@ -692,7 +692,7 @@ Yii.Html.inputField = function (type,name,value,htmlOptions) {
     if(!PHP.isset(htmlOptions['id']))
         htmlOptions['id']=this.getIdByName(name);
     else if(htmlOptions['id']===false)
-        unset(htmlOptions['id']);
+        htmlOptions['id'] = null;
 
     return this.tag('input',htmlOptions);
 }
